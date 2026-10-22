@@ -55,14 +55,14 @@ export const About: React.FC = () => {
                 }}
               >
                 <picture className="w-full h-full block">
-                  <source srcSet="/portrait.webp" type="image/webp" />
+                  <source srcSet="/portrait-photo.webp" type="image/webp" />
                   <img
-                    src="/portrait.png"
-                    alt="Illustrated portrait of Nanda Krishna C, smiling, with curly black hair and a light blue shirt, standing in a green garden"
+                    src="/portrait-photo.png"
+                    alt="Portrait photo of Nanda Krishna C, a young man with curly black hair, wearing a light blue patterned shirt"
                     width={288}
                     height={288}
                     className="w-full h-full object-cover"
-                    style={{ objectPosition: 'center 20%' }}
+                    style={{ objectPosition: 'center 25%', imageRendering: 'auto' }}
                     loading="lazy"
                   />
                 </picture>

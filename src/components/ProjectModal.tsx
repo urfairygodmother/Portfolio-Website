@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import type { Project } from '../types/portfolio';
 import { SproutDoodle, LeafDoodle, WashiTape, GithubIcon } from './DoodleIcons';
-import { X, ExternalLink, Calendar, Wrench, CheckCircle2 } from 'lucide-react';
+import { X, ExternalLink, Calendar, Wrench, CheckCircle2, Sparkles } from 'lucide-react';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -30,6 +30,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   }, [project, onClose]);
 
   if (!project) return null;
+
+  const isUpcoming = project.badge === 'Upcoming Project' || project.tools.includes('Coming soon');
 
   return (
     <div
@@ -110,7 +112,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           style={{ borderRadius: '24px 20px 22px 18px' }}
         >
           <img
-            src={`/${project.id === 'sprout-notes' ? 'sprout-notes.jpg' : project.id === 'algocanvas' ? 'algocanvas.jpg' : 'sprout-notes.jpg'}`}
+            src="/algocanvas.jpg"
             alt={project.title}
             className="w-full h-56 sm:h-72 object-cover object-center"
           />
@@ -146,7 +148,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             style={{ borderRadius: '16px 22px 20px 18px' }}
           >
             <h4 className="font-['Fraunces'] font-bold text-sm text-[#2f4a2a] mb-1.5 flex items-center gap-1.5">
-              <span>💡 The Implementation</span>
+              <span>💡 {isUpcoming ? 'Planned Implementation' : 'The Implementation'}</span>
             </h4>
             <p className="font-['Nunito'] text-xs sm:text-sm text-[#2f4a2a] leading-relaxed">
               {project.solution}
@@ -158,7 +160,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div className="mb-6">
           <h3 className="font-['Fraunces'] text-lg font-bold text-[#2f4a2a] flex items-center gap-2 mb-3">
             <LeafDoodle width={18} height={18} />
-            <span>What I Learned Building This</span>
+            <span>{isUpcoming ? 'What I Plan to Learn While Building' : 'What I Learned Building This'}</span>
           </h3>
           <ul className="space-y-2 list-none p-0 m-0">
             {project.learnings.map((learning, idx) => (
@@ -218,6 +220,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <span>Live Demonstration</span>
               <ExternalLink size={13} />
             </a>
+          )}
+          {!project.githubUrl && !project.demoUrl && (
+            <div
+              className="px-3.5 py-2 bg-[#fdf8e6] border-2 border-[#2f4a2a] text-[#785d11] font-bold text-xs sm:text-sm flex items-center gap-2"
+              style={{ borderRadius: '16px 20px 18px 14px' }}
+            >
+              <Sparkles size={15} className="text-[#987a1d]" />
+              <span>Coming soon — Code repository & live demo will be posted once built</span>
+            </div>
           )}
           <button
             onClick={onClose}

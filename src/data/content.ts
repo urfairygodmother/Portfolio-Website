@@ -85,32 +85,6 @@ export const portfolioContent: ContentData = {
    */
   projects: [
     {
-      id: "sprout-notes",
-      title: "SproutNotes — Local-First Study Pad",
-      tagline: "A distraction-free, browser-based note taking web app with auto-save.",
-      summary:
-        "A lightweight, distraction-free markdown study pad built with vanilla Python, featuring real-time word counting, tag-based filtering, and persistent localStorage sync.",
-      fullDescription:
-        "SproutNotes was created to solve a personal challenge: needing a clean, rapid scratchpad during lecture hours that works completely offline without sign-up friction. It offers instantaneous local persistence, auto-saving drafts so work is never lost, and clean markdown preview parsing.",
-      problem:
-        "Most commercial note apps have heavy load times, require user accounts, and feel overly cluttered for quick lecture notes and code snippet dumps.",
-      solution:
-        "Engineered a zero-dependency web application using vanilla Python and localStorage. Built a debounce auto-save engine, keyboard shortcuts for fast capture, and an organic soft-palette theme.",
-      learnings: [
-        "Mastered DOM manipulation, Event Listeners, and input debouncing techniques in vanilla JS.",
-        "Deepened understanding of the Web Storage API (localStorage) and state serialization.",
-        "Implemented semantic keyboard shortcuts (Ctrl+S, Ctrl+B) and accessible screen-reader notices.",
-      ],
-      tools: ["Python", "HTML5", "CSS3", "LocalStorage", "Git"],
-      year: "2026",
-      demoUrl: "https://github.com/urfairygodmother",
-      githubUrl: "https://github.com/urfairygodmother",
-      badge: "Featured Exploration",
-      cornerRadii: "32px 24px 36px 20px",
-      accentColor: "#bfdcb5",
-      isPlaceholder: true,
-    },
-    {
       id: "algocanvas",
       title: "AlgoCanvas — Interactive Sorting Playground",
       tagline: "Visualizing fundamental sorting algorithms with step-by-step playback.",
@@ -121,45 +95,17 @@ export const portfolioContent: ContentData = {
       problem:
         "Reading pseudocode and trace tables can feel abstract and difficult to internalize for beginning computer science students.",
       solution:
-        "Built a modular visualization canvas using asynchronous Python promises and CSS transition states. Color-codes array elements during comparison, swap, and finalized sorted states.",
+        "I'm planning to build a modular visualization canvas using asynchronous Python promises and CSS transition states. Will color-code array elements during comparison, swap, and finalized sorted states.",
       learnings: [
-        "Understood async/await control flow and setTimeout scheduling for animation sequencing.",
-        "Strengthened understanding of algorithmic time and space complexity (Big-O notation).",
-        "Created an intuitive control UI with play/pause, step-forward, and variable speed slider.",
+        "Planning to master async/await control flow and setTimeout scheduling for animation sequencing.",
+        "Aiming to strengthen understanding of algorithmic time and space complexity (Big-O notation).",
+        "Planning to create an intuitive control UI with play/pause, step-forward, and variable speed slider.",
       ],
-      tools: ["Python", "HTML5", "CSS Flexbox", "Async/Await", "GitHub"],
+      tools: ["Coming soon", "Python", "HTML5", "CSS Flexbox", "Async/Await", "GitHub"],
       year: "2026",
-      demoUrl: "https://github.com/urfairygodmother",
-      githubUrl: "https://github.com/urfairygodmother",
-      badge: "Interactive Demo",
+      badge: "Upcoming Project",
       cornerRadii: "24px 34px 22px 32px",
       accentColor: "#f6c9a6",
-      isPlaceholder: true,
-    },
-    {
-      id: "ecocalc",
-      title: "Campus EcoTracker — Sustainability Calc",
-      tagline: "Helping students measure and reduce their daily campus carbon footprint.",
-      summary:
-        "A responsive utility web app that computes student commuting, meal choices, and lab electricity usage into an intuitive daily sustainability score.",
-      fullDescription:
-        "Built for an environmental science and web dev peer challenge. Campus EcoTracker provides an easy 4-step wizard calculating estimated kg CO2 equivalents with actionable suggestions to lower daily ecological impact on campus.",
-      problem:
-        "Students are often unaware of how routine daily choices (commuting type, single-use cups, lab hardware idle time) compound over a semester.",
-      solution:
-        "Crafted a mobile-first responsive multi-step form with dynamic client-side calculations, visual progress indicators, and instant breakdown charts rendered with pure CSS bars.",
-      learnings: [
-        "Implemented multi-step form validation and user input sanitization in pure Python.",
-        "Built clean responsive layouts adapted to mobile screens without heavy CSS frameworks.",
-        "Practiced Git branching, pull requests, and commit discipline during the development cycle.",
-      ],
-      tools: ["Python", "Semantic HTML", "Modern CSS", "Git"],
-      year: "2026",
-      demoUrl: "https://github.com/urfairygodmother",
-      githubUrl: "https://github.com/urfairygodmother",
-      badge: "Student Project",
-      cornerRadii: "30px 22px 34px 26px",
-      accentColor: "#f4e3a1",
       isPlaceholder: true,
     },
   ],
