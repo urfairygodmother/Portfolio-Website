@@ -1,0 +1,273 @@
+/* ATS-Friendly CV Styles & Clean 1-Page Print Stylesheet */
+
+.cv-page-wrapper {
+  min-height: 100vh;
+  padding: 2.5rem 1rem;
+  background-color: var(--bg-page);
+}
+
+.cv-document {
+  max-width: 820px;
+  margin: 0 auto;
+  background: #ffffff;
+  color: #2f4a2a;
+  padding: 3rem 3.5rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 0 var(--shadow-green);
+  border: 1px solid #d1e5cd;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Screen action header on /cv */
+.cv-action-bar {
+  max-width: 820px;
+  margin: 0 auto 1.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cv-header-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #2f4a2a;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.cv-subheading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a6b44;
+  margin-bottom: 0.75rem;
+}
+
+.cv-contacts-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.925rem;
+  color: #2f4a2a;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid #2f4a2a;
+  margin-bottom: 1.5rem;
+}
+
+.cv-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cv-contact-item a {
+  color: #2f4a2a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cv-section {
+  margin-bottom: 1.4rem;
+}
+
+.cv-section-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #2f4a2a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1.5px solid #9bc08f;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.cv-item {
+  margin-bottom: 0.9rem;
+}
+
+.cv-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.cv-item-title {
+  font-weight: 700;
+  font-size: 1.025rem;
+  color: #2f4a2a;
+}
+
+.cv-item-subtitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #4a6b44;
+}
+
+.cv-item-date {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #557550;
+  white-space: nowrap;
+}
+
+.cv-list {
+  margin: 0.35rem 0 0 1.25rem;
+  padding: 0;
+  font-size: 0.925rem;
+  color: #2f4a2a;
+}
+
+.cv-list li {
+  margin-bottom: 0.25rem;
+}
+
+.cv-skills-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  row-gap: 0.45rem;
+  column-gap: 1rem;
+  font-size: 0.925rem;
+}
+
+.cv-skill-label {
+  font-weight: 700;
+  color: #2f4a2a;
+}
+
+.cv-footer-meta {
+  margin-top: 1.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #d1e5cd;
+  font-size: 0.825rem;
+  color: #5e7d58;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ==========================================
+   PRINT STYLESHEET (Clean 1-Page ATS Standard)
+   ========================================== */
+@media print {
+  @page {
+    margin: 12mm 15mm 12mm 15mm;
+    size: letter portrait;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #1a2f17 !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Drop interactive bars, navigation, floating blobs, textures, shadows */
+  .no-print,
+  .cv-action-bar,
+  .paper-grain,
+  .blob,
+  nav,
+  footer,
+  .site-nav,
+  .site-footer {
+    display: none !important;
+  }
+
+  .cv-page-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    min-height: auto !important;
+  }
+
+  .cv-document {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #1a2f17 !important;
+  }
+
+  .cv-header-title {
+    font-size: 18pt !important;
+    margin-bottom: 2pt !important;
+    color: #1a2f17 !important;
+  }
+
+  .cv-subheading {
+    font-size: 11pt !important;
+    color: #2f4a2a !important;
+    margin-bottom: 4pt !important;
+  }
+
+  .cv-contacts-row {
+    font-size: 9pt !important;
+    gap: 10pt !important;
+    padding-bottom: 6pt !important;
+    border-bottom: 1.5pt solid #1a2f17 !important;
+    margin-bottom: 8pt !important;
+  }
+
+  .cv-section {
+    margin-bottom: 8pt !important;
+    page-break-inside: avoid;
+  }
+
+  .cv-section-title {
+    font-size: 10.5pt !important;
+    border-bottom: 1pt solid #4a6b44 !important;
+    padding-bottom: 2pt !important;
+    margin-bottom: 4pt !important;
+    color: #1a2f17 !important;
+  }
+
+  .cv-item {
+    margin-bottom: 6pt !important;
+  }
+
+  .cv-item-title {
+    font-size: 10pt !important;
+  }
+
+  .cv-item-subtitle {
+    font-size: 9.5pt !important;
+  }
+
+  .cv-item-date {
+    font-size: 9pt !important;
+  }
+
+  .cv-list {
+    margin: 2pt 0 0 12pt !important;
+    font-size: 9.2pt !important;
+  }
+
+  .cv-list li {
+    margin-bottom: 1.5pt !important;
+  }
+
+  .cv-skills-grid {
+    grid-template-columns: 130pt 1fr !important;
+    row-gap: 2pt !important;
+    font-size: 9.2pt !important;
+  }
+
+  .cv-footer-meta {
+    margin-top: 8pt !important;
+    padding-top: 4pt !important;
+    font-size: 8pt !important;
+  }
+
+  a {
+    color: #1a2f17 !important;
+    text-decoration: none !important;
+  }
+}
